@@ -1,6 +1,13 @@
-.body{
-  background: red;
+:root{
+  --correo: #e56060;
+  --linkedin: #0c1a98;
+  --whatsapp: rgb(24, 196, 50);
+  --youtube: #bd081c;
+  --phone: rgba(0, 255, 4, 0.463);
+  --color-letter: rgb(57, 212, 117);
+
 }
+
 
 video{
   position: absolute;
@@ -14,19 +21,114 @@ video{
 }
 
 
-.main{
- background-color: red;
+.main-container{
  display: grid;
+ min-height: 600px;
+ padding: 10px;
+ gap: 10px;
+ grid-template: 
+ 'left-area left-area right-area'
+ 'left-area left-area right-area'
+ 'footer footer right-area'
+  ;
 }
 
-.left-container{
- background: yellow;
+.left-area{
+  grid-area: left-area;
+  display: grid;
+  border-radius: 24px;
+  justify-items: center;
+  grid-template-areas: 
+  'logo logo'
+  'left-textarea left-textarea'
+  'left-paragraph left-paragraph'
+  'btn-encrypt btn-decrypt';
+  height: 500px;
+  box-shadow: 0 0 20px var(--color-letter);
+  background: #03090bc6;
 }
 
-.right-container{
+#logo-alura{
+  grid-area: logo;
+  font-family: 'Permanent Marker', cursiva;
+  margin: 0;
+  resize: none;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  text-shadow: 1px 1px 5px;
+  color: var(--color-letter);
+}
+
+#logo-alura h1{
+  margin: 0px;
+  height: 0px;
+}
+
+
+
+.left-textarea{
+  grid-area: left-textarea;
+  width: 70%;
+  font-size: 20px;
+  resize: none;
+  border: none;
+  outline: none;
+  background: #03090bf0;
+  outline: none;
+  color:var(--color-letter);
+}
+
+
+#left-paragraph{
+  grid-area: left-paragraph;
+  font-family: 'Permanent Marker', cursiva;
+  align-self: center;
+  margin: 0;
+  background: #03090bf0;
+  text-shadow: 1px 1px 20px var(--color-letter);
+  color: var(--color-letter);
+}
+
+
+.btn-encrypt{
+  grid-area: btn-encrypt;
+  justify-self: end;
+  align-self: center;
+}
+
+.btn-decrypt{
+  grid-area: btn-decrypt;
+  justify-self: start;
+  align-self: center;
+
+}
+.btn-encrypt, .btn-decrypt{
+ font-size: 20px;
+ width: 50%;
+ border-radius: 10px;
+ padding: 10px;
+ margin: 0px 10px;
+ cursor: pointer;
+  background: #03090bf0;
+  color: var(--color-letter);
+  box-shadow: 0 0 20px var(--color-letter);
+}
+
+
+.btn-encrypt:hover, .btn-decrypt:hover{
+  border-color: var(--color-letter);
+}
+
+
+
+.right-area{
+  grid-area: right-area;
   background: blue;
 }
 
 .footer{
+  grid-area: footer;
+  height: 100px;
   background: green;
 }
