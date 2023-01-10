@@ -13,28 +13,31 @@
   <title>Matrix Encrypter</title>
 </head>
 <body>
-  <video src="video/matrix.mp4" autoplay muted loop></video>
+  
   <main class="main-container ">
+    <div class="video-container">
+      <video src="video/matrix.mp4" autoplay muted loop></video>
+    </div>
     <section class="left-area">
       <div id="logo-alura">
         <h1>alura</h1>
       </div>
       
         
-        <textarea class="left-textarea" placeholder="Enter Text"></textarea>
+        <textarea class="left-textarea" placeholder="Enter Text" id="left-area"></textarea>
         <p id="left-paragraph">Only lowercase letters without accents</p>
         <input type="button" class="btn-encrypt" value="Encrypt">
         <input type="button" class="btn-decrypt" value="Decrypt">
       
     </section>
     <section class="right-container">
-      <div class="image-container hide">
+      <div class="image-container">
         <img src="image/matrix.png.jfif" alt="image-matrix-neo" class="">
         <h1>No message was found</h1>
         <p>Enter the text you want to encrypt or decrypt</p>
 
       </div>
-      <div class="right-textarea-container">
+      <div class="right-textarea-container" >
         
         <textarea class="right-textarea"  placeholder="Enter Text" id="right-area"></textarea>
         <input type="button" class="btn-copy" value="Copy" id="copy">
@@ -49,15 +52,18 @@
           <li><a rel="noopener" target="_blank"
               href="https://wa.me/1138640265?text=Hola%20espero%20estes%20bien%20he%20visto%20tu%20portafolio%20y%20me%20interesa%20hablar%20contigo"
               class="whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
-          <li><a target="_blank" href="#" class="correo"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+          <li><a target="_blank" href="https://github.com/Mar9851" class="github"><i class="fa-brands fa-github"></i></a></li>
           <li><a target="_blank" href="#" class="youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
           <li><a target="_blank" href="tel:1138640265" class="phone"><i class="fa fa-phone-square"
                 aria-hidden="true"></i></a></li>
         </ul>
       </div>
+      <div class="copy-right">
+        <small>&copy; 2023 <b>Marlon Moreno</b> - Todos los Derechos Reservados. </small>
+      </div>
     </section>
   </main>
   <script src="https://kit.fontawesome.com/8653405a79.js" crossorigin="anonymous"></script>
-
+ <script src="script.js"></script>
 </body>
 </html>

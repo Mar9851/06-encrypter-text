@@ -1,5 +1,7 @@
+/*aca las variables css donde guardo mis colores de iconos de redes sociales letras y fondos*/
+
 :root{
-  --correo: #e56060;
+  --github: #21262d;
   --linkedin: #0c1a98;
   --whatsapp: rgb(24, 196, 50);
   --youtube: #bd081c;
@@ -8,26 +10,14 @@
 
 }
 
-.hide{
-  display: none;
-}
 
-
-video{
-  position: absolute;
-  min-width: 400px;
-  max-height: 700px;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  object-fit: cover;
-  overflow: hidden;
-}
-
+/*contenedor principal*/
 
 .main-container{
+ position: relative;
  display: grid;
- min-height: 600px;
+ width: 100%;
+ height: 100vh;
  padding: 10px;
  gap: 10px;
  grid-template: 
@@ -37,6 +27,32 @@ video{
   ;
 }
 
+
+/*contenedor  video*/
+.video-container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+
+.video-container video{
+  position: relative;
+  object-fit: cover;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+
+}
+
+
+/*contenedor del area izquierda*/
 .left-area{
   grid-area: left-area;
   display: grid;
@@ -47,11 +63,13 @@ video{
   'left-textarea left-textarea'
   'left-paragraph left-paragraph'
   'btn-encrypt btn-decrypt';
-  height: 500px;
+  height: 50em;
   box-shadow: 0 0 20px var(--color-letter);
   background: #03090bc6;
 }
 
+
+/*logo alura*/
 #logo-alura{
   grid-area: logo;
   font-family: 'Permanent Marker', cursiva;
@@ -59,10 +77,11 @@ video{
   resize: none;
   border: none;
   outline: none;
-  font-size: 20px;
+  font-size: 1.25em;
   text-shadow: 1px 1px 5px;
   color: var(--color-letter);
 }
+
 
 #logo-alura h1{
   margin: 0px;
@@ -70,11 +89,11 @@ video{
 }
 
 
-
+/*textare izquierda*/
 .left-textarea{
   grid-area: left-textarea;
   width: 70%;
-  font-size: 20px;
+  font-size: 1.25em;
   resize: none;
   border: none;
   outline: none;
@@ -95,11 +114,13 @@ video{
 }
 
 
+/* botones del area izquierda*/
 .btn-encrypt{
   grid-area: btn-encrypt;
   justify-self: end;
   align-self: center;
 }
+
 
 .btn-decrypt{
   grid-area: btn-decrypt;
@@ -107,13 +128,15 @@ video{
   align-self: center;
 
 }
+
+
 .btn-encrypt, .btn-decrypt{
- font-size: 20px;
+ font-size: 1.25em;
  width: 50%;
  border-radius: 10px;
  padding: 10px;
  margin: 0px 10px;
- cursor: pointer;
+ 
   background: #03090bf0;
   color: var(--color-letter);
   box-shadow: 0 0 20px var(--color-letter);
@@ -122,10 +145,12 @@ video{
 
 .btn-encrypt:hover, .btn-decrypt:hover, .btn-copy:hover{
   border-color: var(--color-letter);
+  cursor: pointer;
 }
 
 
 
+/*section del area derecha*/
 .right-container{
   grid-area: right-area;
   justify-self: center;
@@ -140,8 +165,18 @@ video{
   background: #03090bc6;
 }
 
+
+/*contenedor de la imagen*/
+.image-container{
+  position: relative;
+}
+
+
 .image-container h1{
   font-family: 'Permanent Marker', cursiva;
+  position: absolute;
+  top: 0;
+  left: 70px;
   resize: none;
   border: none;
   outline: none;
@@ -149,9 +184,10 @@ video{
   text-shadow: 1px 1px 5px var(--color-letter);
 }
 
+
 .image-container p{
   position: absolute;
-  right: 60px;
+  left: 25px;
   top: 20px;
   font-family: 'Permanent Marker', cursiva;
   text-align: center;
@@ -159,15 +195,20 @@ video{
   text-shadow: 1px 1px 5px var(--color-letter);
 }
 
+
 img{
   width: 100%;
   height: 100%;
 }
 
+
+/*textare del lado derecho*/
 .right-textarea-container{
-  position: relative;
+  display: grid;
+  margin: 10px;
   left: 50px;
 }
+
 
 .right-textarea{
   margin-top: 50px;
@@ -181,6 +222,8 @@ img{
   color:var(--color-letter)
 }
 
+
+/*boton copiar*/
 .btn-copy{
   position: relative;
   left: 10px;
@@ -195,20 +238,23 @@ img{
   box-shadow: 0 0 20px var(--color-letter);
 }
 
-/* #image-background{
-  background-image: url(image/matrix.png.jfif);
-  position: relative;
-  background-repeat: no-repeat;
-  background-size: contain;
-  overflow: hidden;
-} */
 
+.copy-right{
+  text-align: center;
+  background: #03090bf0;
+  text-shadow: 1px 1px 20px var(--color-letter);
+  color: var(--color-letter);
+}
+
+
+/*section d iconos redes sociales*/
 .footer{
   grid-area: footer;
   height: 100px;
   justify-self: center;
   
 }
+
 
 .icons-container{
   
@@ -217,6 +263,7 @@ img{
   color:var(--color-letter);
 }
 
+
 .icons-container ul li{
   display: inline-block;
   margin: 0 5px;
@@ -224,6 +271,7 @@ img{
   height: 50px;
   text-align: center;
 }
+
 
 .icons-container ul li a{
   display: block;
@@ -237,9 +285,11 @@ img{
 
 }
 
+
 .footer ul:hover a{
   filter: blur(2px);
 }
+
 
 .icons-container ul li a:hover{
   transform: translateY(-3px) scale(1.05);
@@ -247,22 +297,55 @@ img{
   filter: none;
 }
 
+
 .footer ul li .linkedin:hover{
   background: var(--linkedin);
 }
+
 
 .footer ul li .youtube:hover{
   background: var(--youtube);
 }
 
+
 .footer ul li .whatsapp:hover{
   background: var(--whatsapp);
 }
+
 
 .footer ul li .phone:hover{
   background: var(--phone);
 }
 
-.footer ul li .correo:hover{
-  background: var(--correo);
+
+.footer ul li .github:hover{
+  background: var(--github);
+}
+
+
+
+
+/*section para medias querys*/
+
+@media screen and (minwidth: 48em){
+  .main-container{
+    display: grid;
+    grid-template: 
+    'left-area left-area'
+    'right-container right-container'
+    'footer footer'
+     ;
+   }
+
+   .left-area{
+    grid-area: left-area;
+   }
+
+   .right-container{
+    grid-area: right-container;
+   }
+
+   .footer{
+    grid-area: footer;
+   }
 }
