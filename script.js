@@ -1,8 +1,8 @@
 let btnEncrypt = document.querySelector(".btn-encrypt");
 let btnDecrypt = document.querySelector(".btn-decrypt");
 let btnCopy = document.querySelector(".btn-copy");
-let leftArea = document.getElementById('left-area');
-let rightArea = document.getElementById('right-area');
+let leftArea = document.querySelector('.left-textarea');
+let rightArea = document.querySelector('.right-textarea');
 
 btnEncrypt.addEventListener('click',encrypt);
 btnDecrypt.addEventListener('click',decrypt)
@@ -22,7 +22,7 @@ function encrypt() {
   var textEncrypt = textEncrypt.replace(/u/gim, "ufat");
   leftArea.value = '';
   
-  document.querySelector(".image-container").style.display = "none";
+  document.getElementById("image").style.visibility = "hidden";
   document.querySelector(".right-textarea").innerHTML = textEncrypt;
  
 }
@@ -39,18 +39,22 @@ function decrypt() {
   var textEncrypt = textEncrypt.replace(/ufat/gim, "u");
   leftArea.value = '';
 
-  document.querySelector(".image-container").style.display = "none";
+  document.getElementById("image").style.visibility = "hidden";
   document.querySelector(".right-textarea").innerHTML = textEncrypt;
 
 }
 
 function copyText() {
+
   let text = rightArea;
   text.select();
   document.execCommand("copy");
-  document.querySelector('.image-container').style.display = "initial";
-
+  document.getElementById('image').style.visibility = "initial";
+  
 }
+
+
+
   
 
   

@@ -1,76 +1,45 @@
-/*aca las variables css donde guardo mis colores de iconos de redes sociales letras y fondos*/
-
-:root{
-  --github: #21262d;
-  --linkedin: #0c1a98;
-  --whatsapp: rgb(24, 196, 50);
-  --youtube: #bd081c;
-  --phone: rgba(0, 255, 4, 0.463);
-  --color-letter: rgb(57, 212, 117);
-
-}
 
 
-/*contenedor principal*/
 
-.main-container{
+contenedor principal
+
+/* .main-container{
  position: relative;
  display: grid;
- width: 100%;
+ width: 100vw;
  height: 100vh;
- padding: 10px;
- gap: 10px;
+ padding: .625rem;
+ gap: .625rem;
  grid-template: 
- 'left-area left-area right-area'
- 'left-area left-area right-area'
- 'footer footer right-area'
+ 'left-container left-container right-container'
+ 'left-container left-container right-container'
+ '  footer          footer      right-container'
   ;
-}
+} */
 
 
 /*contenedor  video*/
-.video-container{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  overflow: hidden;
-}
 
 
-.video-container video{
-  position: relative;
-  object-fit: cover;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  transform: translate(-50%, -50%);
 
-}
-
-
-/*contenedor del area izquierda*/
-.left-area{
-  grid-area: left-area;
+/* contenedor del area izquierda
+.left-container{
+  grid-area: left-container;
   display: grid;
-  border-radius: 24px;
+  border-radius: 1.5em;
   justify-items: center;
   grid-template-areas: 
-  'logo logo'
-  'left-textarea left-textarea'
+  '    logo           logo'
+  'left-textarea  left-textarea'
   'left-paragraph left-paragraph'
-  'btn-encrypt btn-decrypt';
-  height: 50em;
-  box-shadow: 0 0 20px var(--color-letter);
+  ' btn-encrypt    btn-decrypt';
+  box-shadow: 0 0 1.25rem var(--color-letter);
   background: #03090bc6;
-}
+} */
 
 
 /*logo alura*/
-#logo-alura{
+/* #logo-alura{
   grid-area: logo;
   font-family: 'Permanent Marker', cursiva;
   margin: 0;
@@ -78,20 +47,20 @@
   border: none;
   outline: none;
   font-size: 1.25em;
-  text-shadow: 1px 1px 5px;
+  text-shadow: .0625rem .0625rem .3125rem;
   color: var(--color-letter);
 }
 
 
 #logo-alura h1{
-  margin: 0px;
-  height: 0px;
-}
+  margin: 0rem;
+  height: 0rem;
+} */
 
 
 /*textare izquierda*/
-.left-textarea{
-  grid-area: left-textarea;
+/* .left-container{
+  grid-area: left-container;
   width: 70%;
   font-size: 1.25em;
   resize: none;
@@ -100,7 +69,7 @@
   background: #03090bf0;
   outline: none;
   color:var(--color-letter);
-}
+} */
 
 
 #left-paragraph{
@@ -109,7 +78,7 @@
   align-self: center;
   margin: 0;
   background: #03090bf0;
-  text-shadow: 1px 1px 20px var(--color-letter);
+  text-shadow: .0625rem .0625rem 1.25rem var(--color-letter);
   color: var(--color-letter);
 }
 
@@ -133,13 +102,13 @@
 .btn-encrypt, .btn-decrypt{
  font-size: 1.25em;
  width: 50%;
- border-radius: 10px;
- padding: 10px;
- margin: 0px 10px;
+ border-radius: .625rem;
+ padding: .625rem;
+ margin: 0rem .625rem;
  
   background: #03090bf0;
   color: var(--color-letter);
-  box-shadow: 0 0 20px var(--color-letter);
+  box-shadow: 0 0 1.25rem var(--color-letter);
 }
 
 
@@ -152,16 +121,12 @@
 
 /*section del area derecha*/
 .right-container{
-  grid-area: right-area;
+  grid-area: right-container;
   justify-self: center;
-  border-radius: 24px;
-  max-width: 400px;
-  max-height: 600px;
-  /* background-image: url(image/matrix.png.jfif);
-  background-repeat: no-repeat;
-  background-size: contain; */
+  border-radius: 1.5em;
+  max-width: 25em;
   overflow: hidden;
-  box-shadow: 0 0 20px var(--color-letter);
+  box-shadow: 0 0 1.25rem var(--color-letter);
   background: #03090bc6;
 }
 
@@ -169,6 +134,7 @@
 /*contenedor de la imagen*/
 .image-container{
   position: relative;
+  width: 100%;
 }
 
 
@@ -176,45 +142,43 @@
   font-family: 'Permanent Marker', cursiva;
   position: absolute;
   top: 0;
-  left: 70px;
+  left: 4.4em;
   resize: none;
   border: none;
   outline: none;
-  font-size: 20px;
-  text-shadow: 1px 1px 5px var(--color-letter);
+  font-size: 1.5em;
+  text-shadow: .0625rem .0625rem .3125rem var(--color-letter);
 }
 
 
 .image-container p{
-  position: absolute;
-  left: 25px;
-  top: 20px;
   font-family: 'Permanent Marker', cursiva;
-  text-align: center;
-  font-size: 16px;
-  text-shadow: 1px 1px 5px var(--color-letter);
+  position: absolute;
+  left: 1.5625rem;
+  top: 1.25rem;
+  font-size: 1rem;
+  text-shadow: .0625rem .0625rem .3125rem var(--color-letter);
 }
 
 
 img{
   width: 100%;
-  height: 100%;
 }
 
 
 /*textare del lado derecho*/
 .right-textarea-container{
   display: grid;
-  margin: 10px;
-  left: 50px;
+  margin: .625rem;
+  left: 3.125rem;
 }
 
 
 .right-textarea{
-  margin-top: 50px;
-  width: 300px;
-  height: 200px;
-  font-size: 20px;
+  margin-top: 3.125rem;
+  width: 18.75em;
+  height: 12.5em;
+  font-size: 1.25rem;
   resize: none;
   border: none;
   outline: none;
@@ -226,23 +190,23 @@ img{
 /*boton copiar*/
 .btn-copy{
   position: relative;
-  left: 10px;
-  font-size: 20px;
+  left: .625rem;
+  font-size: 1.25rem;
   width: 50%;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 40px;
+  border-radius: .625rem;
+  padding: .625rem;
+  margin: 2.5rem;
   cursor: pointer;
   background: #03090bf0;
   color: var(--color-letter);
-  box-shadow: 0 0 20px var(--color-letter);
+  box-shadow: 0 0 1.25rem var(--color-letter);
 }
 
 
 .copy-right{
   text-align: center;
   background: #03090bf0;
-  text-shadow: 1px 1px 20px var(--color-letter);
+  text-shadow: .0625rem .0625rem 1.25rem var(--color-letter);
   color: var(--color-letter);
 }
 
@@ -250,7 +214,6 @@ img{
 /*section d iconos redes sociales*/
 .footer{
   grid-area: footer;
-  height: 100px;
   justify-self: center;
   
 }
@@ -266,34 +229,34 @@ img{
 
 .icons-container ul li{
   display: inline-block;
-  margin: 0 5px;
-  width: 50px;
-  height: 50px;
+  margin: 0 .3125rem;
+  width: 3.125rem;
+  height: 3.125rem;
   text-align: center;
 }
 
 
 .icons-container ul li a{
   display: block;
-  padding: 0 10px;
+  padding: 0 .625rem;
   background: #03090bf0;
   color: #fff;
-  line-height: 50px;
-  font-size: 18px;
-  box-shadow: 0 0 20px var(--color-letter);
+  line-height: 3.125rem;
+  font-size: 1.125rem;
+  box-shadow: 0 0 1.25rem var(--color-letter);
   transition: .2s;
 
 }
 
 
 .footer ul:hover a{
-  filter: blur(2px);
+  filter: blur(.125rem);
 }
 
 
 .icons-container ul li a:hover{
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 5px 5px 0px var(--color-letter);
+  transform: translateY(-0.1875rem) scale(1.05);
+  box-shadow: 0 .3125rem .3125rem 0rem var(--color-letter);
   filter: none;
 }
 
@@ -327,7 +290,7 @@ img{
 
 /*section para medias querys*/
 
-@media screen and (minwidth: 48em){
+/* @media screen and (minwidth: 48em){
   .main-container{
     display: grid;
     grid-template: 
@@ -343,6 +306,35 @@ img{
 
    .right-container{
     grid-area: right-container;
+   }
+
+   .footer{
+    grid-area: footer;
+   }
+} */
+
+@media screen and (maxwidth: 30rem){
+  .main-container{
+    position: relative;
+    display: grid;
+    padding: .625rem;
+    gap: .625rem;
+    grid-template: 
+    'left-area'
+    'right-area'
+    'footer'
+     ;
+   }
+
+   .left-area{
+    grid-area: left-area;
+    position: absolute;
+   }
+
+   .right-area{
+    grid-area: right-area;
+    position: absolute;
+    justify-self: center;
    }
 
    .footer{
