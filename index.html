@@ -14,43 +14,62 @@
 </head>
 <body>
   <main class="main-container">
+
+    <!-- contenedor video -->
     <div class="video-container">
       <video autoplay muted loop>
        <source src="video/matrix.mp4" type="video/mp4">
       </video>
     </div>
 
-  
+     <!-- contenedor logo -->
     <div class="logo-alura">
       <h1>
         alura
       </h1>
     </div>
+    
+    <!-- grupo 1 -->
     <div class="left-container">
-      <textarea class="left-textarea" placeholder="Enter Text" ></textarea>
-        <p class="left-text">Only lowercase letters without accents</p>
-        <input type="button" class="btn-encrypt" value="Encrypt">
-        <input type="button" class="btn-decrypt" value="Decrypt">
+      <div class="textarea-container1" id="area1">
+        <textarea type="text" class="left-textarea" id="textarea1" name="text-encrypt" placeholder="Enter Text" ></textarea>
+        <i class="icono-textarea fa-regular fa-circle-xmark"></i>
+      </div>
+       <div class="text-container" id="text-1">
+         <p class="left-text">Only lowercase letters without accents</p>
+       </div>
+       <div class="btn-container" id="buttons">
+         <input type="button" id="btn-encrypt" class="btn-encrypt" value="Encrypt">
+         <input type="button" id="btn-decrypt" class="btn-decrypt" value="Decrypt">
+        </div>
     </div>
+
+
+    <!-- grupo 2 -->
     <div class="right-container"  >
       <div class="image-container " id="image">
         <img src="image/matrix.png.jfif" alt="image-matrix-neo" class="img">
         <h1>No message was found</h1>
         <p>Enter the text you want to encrypt or decrypt</p>
-        
-        
       </div>
-      <div class="right-textarea-container " >
+        
+        
+
+      <!-- grupo 3 -->
+      <div class="textarea-container2 " >
         
         <textarea class="right-textarea"  placeholder="Enter Text"></textarea>
-        <input type="button" class="btn-copy" value="Copy">
+        <p class="success-text">The message was encrypted correctly</p>
+        <input type="button" class="btn-copy" id="btn-copy"value="Copy">
       </div>
     </div>
+
+    <!-- grupo 4 -->
     <div class="footer">
       <div class="icons-container">
 
         <ul>
-          <li><a rel="noopener" target="_blank" href="https://www.linkedin.com/in/marlon-moreno-835a93117" class="linkedin"><i
+          <li><a rel="noopener"  target="_blank" href="https://www.linkedin.com/in/marlon-moreno-835a93117" class="linkedin"><i
                 class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
           <li><a rel="noopener" target="_blank"
               href="https://wa.me/1138640265?text=Hola%20espero%20estes%20bien%20he%20visto%20tu%20portafolio%20y%20me%20interesa%20hablar%20contigo"
