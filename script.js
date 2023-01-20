@@ -9,9 +9,6 @@ let btnCopy = document.getElementById("btn-copy");
 let textArea1 = document.getElementById('textarea1');
 let rightArea = document.querySelector('.right-textarea');
 
-btnEncrypt.addEventListener('click',encrypt);
-btnDecrypt.addEventListener('click',decrypt);
-btnCopy.addEventListener('click',copyText);
 
 
 
@@ -32,6 +29,7 @@ const validarTextarea = (e) => {
     document.getElementById('buttons').style.visibility = 'initial';
 
    }else{
+  
     // escondo los botones
     document.getElementById('buttons').style.visibility = 'hidden';
     // le coloco el incono de incorrecto
@@ -41,18 +39,27 @@ const validarTextarea = (e) => {
     // desactivo el texto correcto y activo el incorrecto
     document.getElementById('text-1').classList.remove('text-correcto');
     document.getElementById('text-1').classList.add('text-incorrecto');
+    
    }
 }
 
 textArea1.addEventListener('keyup', validarTextarea);
 textArea1.addEventListener('blur', validarTextarea);
 
-btnEncrypt.addEventListener('button', (e) => {
-  e.preventDefault();
-})
-btnDecrypt.addEventListener('button', (e) => {
-  e.preventDefault();
-})
+
+btnEncrypt.disabled = true;
+btnEncrypt.addEventListener('change', validandoBoton);
+function validandoBoton(){
+  if(textArea1.value === ''){
+    btnEncrypt.disabled = true;
+  }else{
+    btnEncrypt.disabled = false;
+  }
+}
+
+// btnDecrypt.addEventListener('button', (e) => {
+//   e.preventDefault();
+// })
 /************************************************************************************************ */
 
 
@@ -60,26 +67,29 @@ btnDecrypt.addEventListener('button', (e) => {
 
 /**bloque de funcion encriptar desencriptar y copiar */
 function encrypt() {
-  var text = textArea1.value.toLowerCase();
+  
+  var text = textArea1.value;
 
   
+
+    var textEncrypt = text.replace(/e/gim, "enter");
+    var textEncrypt = textEncrypt.replace(/o/gim, "ober");
+    var textEncrypt = textEncrypt.replace(/i/gim, "imes");
+    var textEncrypt = textEncrypt.replace(/a/gim, "ai");
+    var textEncrypt = textEncrypt.replace(/u/gim, "ufat");
+    textArea1.value = '';
+    document.getElementById('text-2').style.visibility = "hidden";
+    document.getElementById("textarea-2").style.opacity = 1;
+    document.querySelector(".right-textarea").innerHTML = textEncrypt;
   
-  var textEncrypt = text.replace(/e/gim, "enter");
-  var textEncrypt = textEncrypt.replace(/o/gim, "ober");
-  var textEncrypt = textEncrypt.replace(/i/gim, "imes");
-  var textEncrypt = textEncrypt.replace(/a/gim, "ai");
-  var textEncrypt = textEncrypt.replace(/u/gim, "ufat");
-  textArea1.value = '';
   
-  document.getElementById("textarea-2").style.opacity = 1;
-  document.querySelector(".right-textarea").innerHTML = textEncrypt;
  
 }
 
 
 
 function decrypt() {
-  var text = textArea1.value.toLowerCase();
+  var text = textArea1.value;
 
   var textEncrypt = text.replace(/enter/gim, "e");
   var textEncrypt = textEncrypt.replace(/ober/gim, "o");
@@ -99,18 +109,16 @@ function copyText() {
   let text = rightArea;
   text.select();
   document.execCommand("copy");
-  document.getElementById("textarea-2").style.opacity = 0;
-  
-  
+  document.getElementById('text-2').style.visibility = "initial";
+  document.getElementById("textarea-2").style.opacity = 0; 
 }
+
+btnEncrypt.addEventListener('click',encrypt);
+btnDecrypt.addEventListener('click',decrypt);
+btnCopy.addEventListener('click',copyText);
 
 /********************************************************************************************** */
 
 
-
-  
-
-  
-  
 
 

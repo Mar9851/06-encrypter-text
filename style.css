@@ -232,11 +232,16 @@
 }
 
 
+.text-2{
+  text-align: center;
+  margin-top: 20px;
+  overflow: hidden;
+}
 
-.image-container h1{
+
+.text-2 h1{
   font-family: 'Permanent Marker', cursiva;
-  z-index: 3;
-  position: absolute;
+  /* position: absolute; */
   margin-top: 0;
   left: 4.4em;
   resize: none;
@@ -247,10 +252,10 @@
 }
 
 
-.image-container p{
+.text-2 p{
   font-family: 'Permanent Marker', cursiva;
-  z-index: 3;
-  position: absolute;
+  
+  /* position: absolute; */
   text-align: center;
   margin: 0;
   left: 25px;
@@ -434,6 +439,10 @@
   .textarea-container2{
     margin-top: 50%;
     height: 30%;
+  }
+
+  .text-2{
+    font-size: 2em;
   }
   
   
