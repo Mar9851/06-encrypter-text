@@ -50,6 +50,9 @@ textArea1.addEventListener('blur', validarTextarea);
 btnEncrypt.addEventListener('button', (e) => {
   e.preventDefault();
 })
+btnDecrypt.addEventListener('button', (e) => {
+  e.preventDefault();
+})
 /************************************************************************************************ */
 
 
@@ -68,7 +71,7 @@ function encrypt() {
   var textEncrypt = textEncrypt.replace(/u/gim, "ufat");
   textArea1.value = '';
   
-  document.getElementById("image").style.visibility = "hidden";
+  document.getElementById("textarea-2").style.opacity = 1;
   document.querySelector(".right-textarea").innerHTML = textEncrypt;
  
 }
@@ -84,8 +87,9 @@ function decrypt() {
   var textEncrypt = textEncrypt.replace(/ai/gim, "a");
   var textEncrypt = textEncrypt.replace(/ufat/gim, "u");
   textArea1.value = '';
-
-  document.getElementById("image").style.visibility = "hidden";
+  
+  document.getElementById("textarea-2").style.opacity = 1;
+  
   document.querySelector(".right-textarea").innerHTML = textEncrypt;
 
 }
@@ -95,7 +99,8 @@ function copyText() {
   let text = rightArea;
   text.select();
   document.execCommand("copy");
-  document.getElementById('image').style.visibility = "initial";
+  document.getElementById("textarea-2").style.opacity = 0;
+  
   
 }
 
