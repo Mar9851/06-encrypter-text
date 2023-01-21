@@ -68,7 +68,7 @@
   min-width: 100vw;
   min-height: 100vh;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.1fr .5fr 0.5fr 0.1fr;
+  grid-template-rows: 0.1fr 1fr 1fr 0.1fr;
   gap: 0.5em 0.5em;
   
   grid-auto-flow: row;
@@ -218,7 +218,7 @@
   cursor: pointer;
 }
 
-
+/* contenedor de imagen y textarea */
 .right-container { 
   grid-area: right-container; 
   background-image: url(image/siluette-640px.jpg);
@@ -264,7 +264,6 @@
 
 .textarea-container2{
   position: relative;
-  margin-top: 10%;
   display: grid;
   justify-items: center;
   align-items: center;
@@ -363,6 +362,100 @@
 
 
 /* grupo medias query 30rem 48rem 60rem */
+
+ @media screen and (min-width:280px) and (max-height:920px){
+  .main-container { 
+    display: grid; 
+    grid-template-columns: 1fr;
+    grid-template-rows: .2fr 1fr 1fr .1fr;
+    gap: 0.5em 0.5em;
+    
+    grid-auto-flow: row;
+    grid-template-areas:
+            "logo-alura"
+          "right-container"
+          "left-container"
+              "footer";
+  }
+
+  .logo-alura{
+    grid-area: logo-alura;
+    font-size: 1em;
+    background-color: var(--backgroundBox);
+  }
+
+  .left-container{
+    grid-area: left-container;
+    border-radius: 1.25em;
+  }
+
+  .right-container{
+    grid-area: right-container;
+  }
+
+  .right-textarea{
+    grid-area: right-textarea;
+    position: absolute;
+    width: 80%;
+    height: 90%;
+    font-size: 1em;
+    resize: none;
+    border: none;
+    outline: none;
+    background: #03090bf0;
+    color:var(--color-letter);
+    box-shadow: 0 0 20px var(--color-letter);
+  }
+  
+  
+  .success-text{
+    position: absolute;
+    text-align: center;
+    margin-top: 10%;
+    font-family: 'Permanent Marker', cursiva;
+    text-shadow: 1px 1px 5px var(--color-letter);
+    font-size: 16px;
+    color: var(--color-letter);
+  }
+
+  .btn-copy{
+    grid-area: btn-copy;
+    font-size: 1em;
+    width: 30%;
+    border-radius: .625rem;
+    padding: .625rem;
+    margin: 1rem;
+    cursor: pointer;
+    background: #03090bf0;
+    color: var(--color-letter);
+    box-shadow: 0 0 1.25rem var(--color-letter);
+  }
+
+  .footer{
+    grid-area: footer;
+    display: flex;
+    flex-flow: wrap;
+  }
+  
+
+  .icons-container ul li{
+    display: inline-block;
+    margin: 0%;
+  }
+  
+  
+  .icons-container ul li a{
+    display: block;
+    border-radius: .625rem;
+    background: var(--backgroundBox);
+    color: #fff;
+    box-shadow: 0 0 1.25em var(--color-letter);
+  }
+  
+  
+  
+}
+
 
 @media screen and (min-width:480px){
   .main-container { 
@@ -517,5 +610,379 @@
   
 }
 
+/* media query para ipad en modo horizontal */
+@media  screen and (min-width:1180px) and (max-height:820px){
+  .main-container { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: .3fr 1fr 1fr .3fr;
+    gap: 0.5em 0.5em;
+    
+    grid-auto-flow: row;
+    grid-template-areas:
+        "logo-alura      right-container"
+      "left-container    right-container"
+      "left-container    right-container"
+          "footer        right-container";
+  }
+
+
+  .logo-alura{
+    grid-area: logo-alura;
+    font-size: 2em;
+    background-color: var(--backgroundBox);
+  }
+
+  .left-container{
+    grid-area: left-container;
+    border-radius: 1.25em;
+  }
+
+  .right-container{
+    grid-area: right-container;
+  }
+
+  .textarea-container2{
+    margin-top: 10%;
+    height: 50%;
+  }
+
+  .success-text{
+    position: absolute;
+    margin-top: 20%;
+    font-family: 'Permanent Marker', cursiva;
+    text-shadow: 1px 1px 5px var(--color-letter);
+    font-size: 16px;
+    color: var(--color-letter);
+  }
+
+  .text-2{
+    font-size: 2em;
+  }
+  
+  
+
+  .footer{
+    grid-area: footer;
+    justify-content: center;
+    
+  }
+
+
+  .icons-container{
+    align-items: center;
+    justify-content: center;
+    color:var(--color-letter);
+  }
+  
+  
+  .icons-container li{
+    display: inline-block;
+    margin: 0 .3125rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    text-align: center;
+  }
+  
+  
+  .icons-container  a{
+    display: block;
+    padding: 0 .625rem;
+    background: #03090bf0;
+    color: #fff;
+    line-height: 3.125rem;
+    font-size: 1.125rem;
+    box-shadow: 0 0 1.25rem var(--color-letter);
+    transition: .2s;
+  
+  }
+  
+  
+  .footer ul:hover a{
+    filter: blur(.125rem);
+  }
+  
+  
+  .icons-container ul li a:hover{
+    transform: translateY(-0.1875rem) scale(1.05);
+    box-shadow: 0 .3125rem .3125rem 0rem var(--color-letter);
+    filter: none;
+  }
+  
+  
+  .linkedin:hover{
+    background: var(--linkedin);
+  }
+  
+  .youtube:hover{
+    background: var(--youtube);
+  }
+  
+  
+  .whatsapp:hover{
+    background: var(--whatsapp);
+  }
+  
+  
+  .phone:hover{
+    background: var(--phone);
+  }
+  
+  
+  .github:hover{
+    background: var(--github);
+  }
+  
+}
+
+/* media query para ipad mini modo horizontal */
+@media  screen and (min-width:1024px) and (max-height:768px){
+  .main-container { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: .3fr 1fr 1fr .3fr;
+    gap: 0.5em 0.5em;
+    
+    grid-auto-flow: row;
+    grid-template-areas:
+        "logo-alura       right-container"
+      "left-container     right-container"
+      "left-container     right-container"
+          "footer         right-container";
+  }
+
+
+  .logo-alura{
+    grid-area: logo-alura;
+    font-size: 2em;
+    background-color: var(--backgroundBox);
+  }
+
+  .left-container{
+    grid-area: left-container;
+    border-radius: 1.25em;
+  }
+
+  .right-container{
+    grid-area: right-container;
+  }
+
+  .textarea-container2{
+    margin-top: 5%;
+    height: 60%;
+  }
+
+  .success-text{
+    position: absolute;
+    margin-top: 20%;
+    font-family: 'Permanent Marker', cursiva;
+    text-shadow: 1px 1px 5px var(--color-letter);
+    font-size: 16px;
+    color: var(--color-letter);
+  }
+
+  .text-2{
+    font-size: 2em;
+  }
+  
+  
+
+  .footer{
+    grid-area: footer;
+    justify-content: center;
+    
+  }
+
+
+  .icons-container{
+    align-items: center;
+    justify-content: center;
+    color:var(--color-letter);
+  }
+  
+  
+  .icons-container li{
+    display: inline-block;
+    margin: 0 .3125rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    text-align: center;
+  }
+  
+  
+  .icons-container  a{
+    display: block;
+    padding: 0 .625rem;
+    background: #03090bf0;
+    color: #fff;
+    line-height: 3.125rem;
+    font-size: 1.125rem;
+    box-shadow: 0 0 1.25rem var(--color-letter);
+    transition: .2s;
+  
+  }
+  
+  
+  .footer ul:hover a{
+    filter: blur(.125rem);
+  }
+  
+  
+  .icons-container ul li a:hover{
+    transform: translateY(-0.1875rem) scale(1.05);
+    box-shadow: 0 .3125rem .3125rem 0rem var(--color-letter);
+    filter: none;
+  }
+  
+  
+  .linkedin:hover{
+    background: var(--linkedin);
+  }
+  
+  .youtube:hover{
+    background: var(--youtube);
+  }
+  
+  
+  .whatsapp:hover{
+    background: var(--whatsapp);
+  }
+  
+  
+  .phone:hover{
+    background: var(--phone);
+  }
+  
+  
+  .github:hover{
+    background: var(--github);
+  }
+  
+}
+
+
+@media  screen and (min-width:1280px) and (max-height:912px){
+  .main-container { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: .3fr 1fr 1fr .3fr;
+    gap: 0.5em 0.5em;
+    
+    grid-auto-flow: row;
+    grid-template-areas:
+        "logo-alura      right-container"
+      "left-container   right-container"
+      "left-container    right-container"
+          "footer        right-container";
+  }
+
+
+  .logo-alura{
+    grid-area: logo-alura;
+    font-size: 2em;
+    background-color: var(--backgroundBox);
+  }
+
+  .left-container{
+    grid-area: left-container;
+    border-radius: 1.25em;
+  }
+
+  .right-container{
+    grid-area: right-container;
+  }
+
+  .textarea-container2{
+    margin-top: 5%;
+    height: 60%;
+  }
+
+  .success-text{
+    position: absolute;
+    margin-top: 20%;
+    font-family: 'Permanent Marker', cursiva;
+    text-shadow: 1px 1px 5px var(--color-letter);
+    font-size: 16px;
+    color: var(--color-letter);
+  }
+
+  .text-2{
+    font-size: 2em;
+  }
+  
+  
+
+  .footer{
+    grid-area: footer;
+    justify-content: center;
+    
+  }
+
+
+  .icons-container{
+    align-items: center;
+    justify-content: center;
+    color:var(--color-letter);
+  }
+  
+  
+  .icons-container li{
+    display: inline-block;
+    margin: 0 .3125rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    text-align: center;
+  }
+  
+  
+  .icons-container  a{
+    display: block;
+    padding: 0 .625rem;
+    background: #03090bf0;
+    color: #fff;
+    line-height: 3.125rem;
+    font-size: 1.125rem;
+    box-shadow: 0 0 1.25rem var(--color-letter);
+    transition: .2s;
+  
+  }
+  
+  
+  .footer ul:hover a{
+    filter: blur(.125rem);
+  }
+  
+  
+  .icons-container ul li a:hover{
+    transform: translateY(-0.1875rem) scale(1.05);
+    box-shadow: 0 .3125rem .3125rem 0rem var(--color-letter);
+    filter: none;
+  }
+  
+  
+  .linkedin:hover{
+    background: var(--linkedin);
+  }
+  
+  .youtube:hover{
+    background: var(--youtube);
+  }
+  
+  
+  .whatsapp:hover{
+    background: var(--whatsapp);
+  }
+  
+  
+  .phone:hover{
+    background: var(--phone);
+  }
+  
+  
+  .github:hover{
+    background: var(--github);
+  }
+  
+}
 
 
