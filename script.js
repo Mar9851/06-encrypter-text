@@ -12,6 +12,7 @@ let rightArea = document.querySelector('.right-textarea');
 
 
 
+
 /**bloque de validacion de texto y estilos de validacion */
 
 const validarTextarea = (e) => {
@@ -47,19 +48,7 @@ textArea1.addEventListener('keyup', validarTextarea);
 textArea1.addEventListener('blur', validarTextarea);
 
 
-btnEncrypt.disabled = true;
-btnEncrypt.addEventListener('change', validandoBoton);
-function validandoBoton(){
-  if(textArea1.value === ''){
-    btnEncrypt.disabled = true;
-  }else{
-    btnEncrypt.disabled = false;
-  }
-}
 
-// btnDecrypt.addEventListener('button', (e) => {
-//   e.preventDefault();
-// })
 /************************************************************************************************ */
 
 
@@ -99,7 +88,7 @@ function decrypt() {
   textArea1.value = '';
   
   document.getElementById("textarea-2").style.opacity = 1;
-  
+  document.getElementById('text-2').style.visibility = "hidden";
   document.querySelector(".right-textarea").innerHTML = textEncrypt;
 
 }
@@ -113,9 +102,51 @@ function copyText() {
   document.getElementById("textarea-2").style.opacity = 0; 
 }
 
-btnEncrypt.addEventListener('click',encrypt);
-btnDecrypt.addEventListener('click',decrypt);
+
 btnCopy.addEventListener('click',copyText);
+
+
+
+
+// funcion para validar boton encrypt que no envie informacion estando vacio
+const validarBotonEncrypt = () => {
+  if(textArea1.value == 0){
+    e.preventDefault();
+    btnEncrypt.disabled = true;
+  }else{
+    btnEncrypt.disabled = false;
+    encrypt();
+  }
+}
+
+var validar = () => {
+  validarBotonEncrypt();
+  
+}
+btnEncrypt.addEventListener('click', validar);
+
+
+
+// funcion para validar boton decrypt
+const validarBotonDecrypt = () => {
+  if(textArea1.value == 0){
+    e.preventDefault();
+    btnDecrypt.disabled = true;
+  }else{
+    btnDecrypt.disabled = false;
+    decrypt();
+  }
+}
+
+var validarDecrypt = () => {
+  validarBotonDecrypt();
+  
+}
+btnDecrypt.addEventListener('click', validarDecrypt);
+
+
+
+
 
 /********************************************************************************************** */
 

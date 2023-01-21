@@ -241,7 +241,6 @@
 
 .text-2 h1{
   font-family: 'Permanent Marker', cursiva;
-  /* position: absolute; */
   margin-top: 0;
   left: 4.4em;
   resize: none;
@@ -254,8 +253,6 @@
 
 .text-2 p{
   font-family: 'Permanent Marker', cursiva;
-  
-  /* position: absolute; */
   text-align: center;
   margin: 0;
   left: 25px;
@@ -437,7 +434,7 @@
   }
 
   .textarea-container2{
-    margin-top: 50%;
+    margin-top: 20%;
     height: 30%;
   }
 
